@@ -1,4 +1,4 @@
-# Project
+# Gridster
 
 
 ## Give a Star! :star:
