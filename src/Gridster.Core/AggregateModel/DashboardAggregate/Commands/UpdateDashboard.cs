@@ -7,8 +7,8 @@ public class UpdateDashboardRequestValidator : AbstractValidator<UpdateDashboard
 
 public class UpdateDashboardRequest : IRequest<UpdateDashboardResponse>
 {
-    public string Name { get; set; }
     public Guid DashboardId { get; set; }
+    public string Name { get; set; }
 }
 
 

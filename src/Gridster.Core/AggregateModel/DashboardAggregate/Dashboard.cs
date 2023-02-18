@@ -11,8 +11,8 @@ public class Dashboard
     {
         DashboardItems = new List<DashboardItem>();
     }
-    public string Name { get; set; }
     public Guid DashboardId { get; set; }
+    public string Name { get; set; }
     public List<DashboardItem> DashboardItems { get; set; }
 }
 

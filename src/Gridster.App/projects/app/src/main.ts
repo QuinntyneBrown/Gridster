@@ -5,13 +5,14 @@ import { importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { RouterModule } from '@angular/router';
-import { GridsterHubConnectionGuard } from '../../core/src/lib/gridster-hub-connection.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BASE_URL } from 'models';
+import { GridsterHubConnectionGuard } from 'core';
 
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: "BASE_URL", useValue: "https://localhost:7013/" },
+    { provide: BASE_URL, useValue: "https://localhost:7013/" },
     importProvidersFrom(
       RouterModule.forRoot([
         { path: '', loadComponent: () => import('./app/home/home.component').then(m => m.HomeComponent), canActivate: [GridsterHubConnectionGuard]}

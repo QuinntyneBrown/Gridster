@@ -3,6 +3,7 @@
 
 using Gridster.Core.AggregateModel.DashboardAggregate;
 using Gridster.Core.AggregateModel.DashboardItemAggregate;
+using Gridster.Core.AggregateModel.ItemAggregate;
 
 namespace Gridster.Core;
 
@@ -10,6 +11,7 @@ public interface IGridsterDbContext
 {
     DbSet<Dashboard> Dashboards { get; set; }
     DbSet<DashboardItem> DashboardItems { get; set; }
+    DbSet<Item> Items { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
 }

@@ -7,9 +7,9 @@ public class UpdateDashboardItemRequestValidator : AbstractValidator<UpdateDashb
 
 public class UpdateDashboardItemRequest : IRequest<UpdateDashboardItemResponse>
 {
-    public Guid DashboardId { get; set; }
-    public string Name { get; set; }
     public Guid DashboardItemId { get; set; }
+    public Guid DashboardId { get; set; }
+    public required string Name { get; set; }
 }
 
 
@@ -36,8 +36,8 @@ public class UpdateDashboardItemRequestHandler : IRequestHandler<UpdateDashboard
         var dashboardItem = await _context.DashboardItems.SingleAsync(x => x.DashboardItemId == request.DashboardItemId);
 
         dashboardItem.DashboardId = request.DashboardId;
+        
         dashboardItem.Name = request.Name;
-        dashboardItem.DashboardItemId = request.DashboardItemId;
 
         await _context.SaveChangesAsync(cancellationToken);
 

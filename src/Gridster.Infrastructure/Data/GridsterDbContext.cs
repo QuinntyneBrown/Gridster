@@ -3,6 +3,7 @@
 
 using Gridster.Core;
 using Gridster.Core.AggregateModel.DashboardItemAggregate;
+using Gridster.Core.AggregateModel.ItemAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gridster.Infrastructure.Data;
@@ -16,6 +17,7 @@ public class GridsterDbContext : DbContext, IGridsterDbContext
 
     public DbSet<Dashboard> Dashboards { get; set; }
     public DbSet<DashboardItem> DashboardItems { get; set; }
+    public DbSet<Item> Items { get; set; }
 }
 
 

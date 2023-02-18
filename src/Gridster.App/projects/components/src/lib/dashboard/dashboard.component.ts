@@ -3,16 +3,15 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from 'components';
 
 @Component({
-  selector: 'app-home',
+  selector: 'g-dashboard',
   standalone: true,
-  imports: [CommonModule, DashboardComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  imports: [CommonModule],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class HomeComponent {
+export class DashboardComponent {
 
 }
 

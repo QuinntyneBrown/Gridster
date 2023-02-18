@@ -7,6 +7,7 @@ public class DashboardItemDto
 {
     public Guid DashboardId { get; set; }
     public string Name { get; set; }
+    public Guid ItemId { get; set; }
     public Guid DashboardItemId { get; set; }
 }
 
