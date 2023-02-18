@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<ng-container *ngIf="vm$ | async as vm">
+    <g-header />
+    <div class="content-container">
+        <g-sidenav>
+            
+        </g-sidenav>
+        <main>
+            <router-outlet />
+        </main>    
+    </div>
+</ng-container>

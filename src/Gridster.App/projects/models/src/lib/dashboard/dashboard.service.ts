@@ -24,6 +24,13 @@ export class DashboardService {
       );
   }
 
+  public getDefault(): Observable<Dashboard> {
+    return this._client.get<{ dashboard: Dashboard }>(`${this._baseUrl}api/dashboard/default`)
+      .pipe(
+        map(x => x.dashboard)
+      );
+  }
+
   public getById(options: { dashboardId: string }): Observable<Dashboard> {
     return this._client.get<{ dashboard: Dashboard }>(`${this._baseUrl}api/dashboard/${options.dashboardId}`)
       .pipe(

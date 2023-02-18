@@ -3,14 +3,15 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GridsterComponent } from 'angular-gridster2';
 
 @Component({
-  selector: 'g-dashboard',
+  selector: 'g-sidenav',
   standalone: true,
-  imports: [CommonModule, GridsterComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  imports: [CommonModule],
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.scss']
 })
-export class DashboardComponent { }
+export class SidenavComponent {
+
+}
 

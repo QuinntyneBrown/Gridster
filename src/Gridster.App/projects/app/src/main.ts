@@ -8,14 +8,18 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BASE_URL } from 'models';
 import { GridsterHubConnectionGuard } from 'core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: BASE_URL, useValue: "https://localhost:7013/" },
+    { provide: BASE_URL, useValue: "https://localhost:7013/" },    
     importProvidersFrom(
+      HttpClientModule,
       RouterModule.forRoot([
-        { path: '', loadComponent: () => import('./app/home/home.component').then(m => m.HomeComponent), canActivate: [GridsterHubConnectionGuard]}
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
+        { path: 'home', loadComponent: () => import('./app/home/home.component').then(m => m.HomeComponent), canActivate: [GridsterHubConnectionGuard]},
+        { path: 'home/:dashboardId', loadComponent: () => import('./app/home/home.component').then(m => m.HomeComponent), canActivate: [GridsterHubConnectionGuard]}
       ]), BrowserAnimationsModule,     
     )
   ]

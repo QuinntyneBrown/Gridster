@@ -13,6 +13,6 @@ import { DashboardComponent } from 'components';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  
 }
 
