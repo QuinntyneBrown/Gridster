@@ -1,8 +1,11 @@
 import { inject } from "@angular/core";
-import { DashboardService } from "models";
+import { DashboardStore } from "models";
+import { map } from "rxjs";
 
 export function createViewModel() {
-    const dashboardService = inject(DashboardService);
-
+    const dashboardStore = inject(DashboardStore);
     
-}
+    return dashboardStore.select(x => x.dashboards).pipe(
+        map(dashboards => ({ dashboards }))
+    );
+};

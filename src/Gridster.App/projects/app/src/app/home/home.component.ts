@@ -3,16 +3,18 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from 'components';
+import { CreateDashboardComponent, DashboardComponent } from 'components';
+import { createViewModel } from './home.view-model';
+import { PushModule } from '@ngrx/component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, DashboardComponent],
+  imports: [CommonModule, DashboardComponent, PushModule, CreateDashboardComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  
+  public vm$ = createViewModel();
 }
 

@@ -1,0 +1,13 @@
+<ng-container *ngIf="vm$ | async as vm">
+
+    <form [formGroup]="vm.form">
+        <div>
+            <label>Name</label>
+            <input type="text" formControlName="name">
+        </div>
+    </form>
+
+    <button>
+        Create
+    </button>
+</ng-container>

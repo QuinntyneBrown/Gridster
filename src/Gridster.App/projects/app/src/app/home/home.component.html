@@ -1,1 +1,7 @@
-<g-dashboard />
+<ng-container *ngIf="vm$ | ngrxPush  as vm">
+
+    <g-dashboard *ngIf="vm.dashboards.length > 0"></g-dashboard>
+
+    <g-create-dashboard *ngIf="vm.dashboards.length == 0"></g-create-dashboard>
+
+</ng-container>

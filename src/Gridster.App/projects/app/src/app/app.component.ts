@@ -3,9 +3,10 @@
 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent, SidenavComponent } from 'components';
+import { DashboardStore } from 'models';
 import { createViewModel } from './app.view-model';
 
 @Component({
@@ -21,6 +22,13 @@ import { createViewModel } from './app.view-model';
     HttpClientModule
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  private readonly _dashboardStore = inject(DashboardStore);
+
+  ngOnInit(): void {
+    this._dashboardStore.load();  
+  }
+  
   public vm$ = createViewModel();
 }
